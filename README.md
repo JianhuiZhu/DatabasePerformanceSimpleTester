@@ -26,4 +26,4 @@ TABLE AND DATA ARE CREATE AND INSERT FOR EVERYTIME RUN THE PROGRAM
   Round 3           17649 ms                      9613 ms                       0 ms approx*                    2 ms
   Round 4           17226 ms                      9023 ms                       1 ms                            2 ms
 
-#approx* this is result for System.currentTimeMillis() Subtraction, after execution minus before execution
+approx* this is result for System.currentTimeMillis() Subtraction, after execution minus before execution
