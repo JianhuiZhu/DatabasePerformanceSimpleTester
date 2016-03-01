@@ -21,9 +21,9 @@ TABLE AND DATA ARE CREATE AND INSERT FOR EVERYTIME RUN THE PROGRAM
 
 
           MySQL insert 100000 record  MongoDB insert 100000 record     MySQL query set of records    MongoDB query set of records
-  Round 1           18342 ms                      9257 ms                       1 ms                            2 ms
-  Round 2           17790 ms                      8874 ms                       1 ms                            2 ms
-  Round 3           17649 ms                      9613 ms                       0 ms approx*                    2 ms
-  Round 4           17226 ms                      9023 ms                       1 ms                            2 ms
+  	Round 1           18342 ms                      9257 ms                       1 ms                            2 ms
+  	Round 2           17790 ms                      8874 ms                       1 ms                            2 ms
+  	Round 3           17649 ms                      9613 ms                       0 ms approx*                    2 ms
+  	Round 4           17226 ms                      9023 ms                       1 ms                            2 ms
 
 approx* this is result for System.currentTimeMillis() Subtraction, after execution minus before execution
