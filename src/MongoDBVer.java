@@ -4,6 +4,7 @@
 import com.mongodb.*;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.IndexOptions;
 import org.bson.BSON;
 import org.bson.Document;
 import java.text.DateFormat;
@@ -20,13 +21,13 @@ public class MongoDBVer {
         //Class.forName("");
         db.getCollection("user_user").drop();
         db.createCollection("user_user");
-        db.getCollection("user_user").createIndex(new Document("from_id",1).append("to_id",1).append("relation",1));
+        db.getCollection("user_user").createIndex(new Document("from_id",1).append("to_id",1).append("relation",1),new IndexOptions().unique(true));
         long before=System.currentTimeMillis();
         for(int count=0;count<Constant.HUNDRED_THOUSAND;count++){
             db.getCollection("user_user").insertOne(
                     new Document()
-                    .append("from_id",Math.abs(random.nextInt(100000)))
-                    .append("to_id",Math.abs(random.nextInt(100000)))
+                    .append("from_id",Math.abs(random.nextInt(Constant.HUNDRED_THOUSAND)))
+                    .append("to_id",Math.abs(random.nextInt(Constant.HUNDRED_THOUSAND)))
                     .append("relation",MemberRelationCollection.getRandomRelation()));
         }
         long after=System.currentTimeMillis();

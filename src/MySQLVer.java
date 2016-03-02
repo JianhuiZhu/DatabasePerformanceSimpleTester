@@ -18,10 +18,10 @@ public class MySQLVer {
             connection.createStatement().execute("DROP TABLE IF EXISTS USER_USER;");
             connection.createStatement().execute(memberAndMemberRelation);
             long before=System.currentTimeMillis();
-            for(int count=0;count<100000;count++){
+            for(int count=0;count<Constant.HUNDRED_THOUSAND;count++){
                 connection.createStatement().execute("INSERT INTO USER_USER(from_id,to_id,relation) VALUES ("
-                        +Math.abs(random.nextInt(100000))+","+
-                        +Math.abs(random.nextInt(100000))+","
+                        +Math.abs(random.nextInt(Constant.HUNDRED_THOUSAND))+","+
+                        +Math.abs(random.nextInt(Constant.HUNDRED_THOUSAND))+","
                         +MemberRelationCollection.getRandomRelation()
                         + ");");
             }
