@@ -18,7 +18,6 @@ public class MongoDBVer {
     MongoClient mongoClient = new MongoClient("localhost",27017);
     MongoDatabase db = mongoClient.getDatabase("test");
     public MongoDBVer(){
-        //Class.forName("");
         db.getCollection("user_user").drop();
         db.createCollection("user_user");
         db.getCollection("user_user").createIndex(new Document("from_id",1).append("to_id",1).append("relation",1),new IndexOptions().unique(true));
