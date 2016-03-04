@@ -14,7 +14,7 @@ public class MySQLVer {
     public MySQLVer(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection=DriverManager.getConnection("jdbc:mysql://localhost/test","root","");
+            connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","admin");
             connection.createStatement().execute("DROP TABLE IF EXISTS USER_USER;");
             connection.createStatement().execute(memberAndMemberRelation);
             long before=System.currentTimeMillis();

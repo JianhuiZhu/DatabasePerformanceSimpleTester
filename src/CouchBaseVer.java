@@ -21,7 +21,9 @@ import static com.couchbase.client.java.query.dsl.Expression.x;
 public class CouchBaseVer {
     private Random random=new Random(System.currentTimeMillis());
     private static final Bucket bucket = CouchbaseCluster.create(DefaultCouchbaseEnvironment.builder().
-            bootstrapCarrierEnabled(false).build(), Arrays.asList("127.0.0.1")).openBucket("user_user","12345678");
+            bootstrapCarrierEnabled(false)
+            .queryTimeout(100000)
+            .kvTimeout(100000).queryPort(11211).build(), Arrays.asList("127.0.0.1")).openBucket("default");
     public CouchBaseVer(){
         Index.buildIndex().on("user_user").indexes("from_id","to_id","relation");
         long before=System.currentTimeMillis();
